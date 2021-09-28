@@ -1,16 +1,15 @@
 function truncate(str, maxlength) {
- let str = prompt(`Введите строку`,``);
- let maxlength = +prompt(`Введите максимальную длину ` , ``)
- if(str == undefined || str == ``){
-   alert(`Строка не введена`);
- }else{
-   truncate();
- }
- function truncate() {
-   if (str.length >= maxlength) {
-     return alert(str.slice(0 , maxlength-1) + `...`);
-   }else{
-     return alert(str);
+ let strLength = str.length;
+ let isExceedMaxlength = strLength > maxlength;
+
+ if (isExceedMaxlength) {
+   let shortenStr = str.slice(0, maxlength - 1);
+
+    return `${shortenStr}…`;
+    
+     }
+
+     return str;
    }
- }
-}
+ 
+
